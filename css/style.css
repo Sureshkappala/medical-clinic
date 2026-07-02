@@ -2903,4 +2903,62 @@ body.dark .map-embed iframe {
     }
 }
 
+/* Custom Auth Navigation Buttons on Standalone Pages */
+.auth-nav-buttons {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 1000;
+}
+.auth-nav-btn {
+    display: flex;
+    align-items: center;
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+.auth-nav-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+.auth-nav-btn svg {
+    color: inherit;
+    transition: transform var(--transition-fast);
+}
+.auth-nav-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* 404 Illustration Float Animation */
+.float-animation {
+    animation: floatImg 6s ease-in-out infinite;
+    max-width: 220px;
+    margin-bottom: 2rem;
+}
+@keyframes floatImg {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 580px) {
+    .auth-nav-buttons {
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        justify-content: space-between;
+    }
+}
+
 

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initRippleButtons();
     initFormValidations();
     initBackToTop();
+    initFieldFilters();
 });
 
 /* ==========================================================================
@@ -625,6 +626,14 @@ function initFormValidations() {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             if (validateForm(loginForm)) {
+                const passVal = document.getElementById('login-password').value;
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
+                if (!passwordRegex.test(passVal)) {
+                    alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
+                    const group = document.getElementById('login-password').closest('.form-group');
+                    group.classList.add('invalid');
+                    return;
+                }
                 alertCustom("Login successful! Welcome back to Stackly.");
                 setTimeout(() => {
                     window.location.href = 'index.html';
@@ -642,9 +651,18 @@ function initFormValidations() {
                 const pass = document.getElementById('register-password').value;
                 const confirmPass = document.getElementById('register-confirm').value;
                 
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
+                if (!passwordRegex.test(pass)) {
+                    alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
+                    const group = document.getElementById('register-password').closest('.form-group');
+                    group.classList.add('invalid');
+                    return;
+                }
+                
                 if (pass !== confirmPass) {
                     const group = document.getElementById('register-confirm').closest('.form-group');
                     group.classList.add('invalid');
+                    alertCustom("Passwords do not match.", true);
                     return;
                 }
                 
@@ -820,3 +838,25 @@ function initBackToTop() {
         });
     });
 }
+
+/* ==========================================================================
+   14. FIELD FILTERS (Name alphabets, Phone digits)
+   ========================================================================== */
+function initFieldFilters() {
+    // Names: filter to alphabets only
+    const nameInputs = document.querySelectorAll('input[id*="name"]');
+    nameInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+    });
+
+    // Phones: filter to digits only
+    const phoneInputs = document.querySelectorAll('input[type="tel"], input[id*="phone"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value = input.value.replace(/[^0-9]/g, '');
+        });
+    });
+}
+
