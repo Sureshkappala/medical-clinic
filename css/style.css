@@ -3021,4 +3021,45 @@ body.menu-open {
     visibility: visible;
 }
 
+/* Mobile Navigation Contact Info Drawer Styling */
+.nav-mobile-contact {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .nav-mobile-contact {
+        display: block;
+        width: 100%;
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--border-glass);
+        padding-top: 1.5rem;
+        text-align: left;
+    }
+    .nav-mobile-contact h4 {
+        color: var(--primary);
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .contact-item {
+        margin-bottom: 1rem;
+    }
+    .contact-item span {
+        display: block;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.2rem;
+    }
+    .contact-item p {
+        font-size: 0.85rem;
+        color: var(--text-main);
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
 
