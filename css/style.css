@@ -109,6 +109,9 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 a {
@@ -2988,6 +2991,34 @@ body.dark .map-embed iframe {
 }
 .auth-options a:hover {
     text-decoration: underline;
+}
+
+/* Prevent background scrolling when mobile menu drawer is active */
+html.menu-open,
+body.menu-open {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+/* Mobile Drawer Overlay background */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 800; /* Behind navbar drawer (850) and above page content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 

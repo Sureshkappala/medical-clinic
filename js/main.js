@@ -150,35 +150,54 @@ function initNavbar() {
 
     // Mobile Hamburger Menu
     if (menuToggle && navbar) {
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            // Toggle hamburger icon morphing if needed (we'll morph via CSS/SVG)
+        // Create or find overlay element
+        let overlay = document.querySelector('.drawer-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'drawer-overlay';
+            document.body.appendChild(overlay);
+        }
+
+        const openMenu = () => {
+            navbar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
+            
             const lines = menuToggle.querySelectorAll('line');
+            lines[0].setAttribute('x1', '5'); lines[0].setAttribute('y1', '5'); lines[0].setAttribute('x2', '19'); lines[0].setAttribute('y2', '19');
+            lines[1].style.opacity = '0';
+            lines[2].setAttribute('x1', '5'); lines[2].setAttribute('y1', '19'); lines[2].setAttribute('x2', '19'); lines[2].setAttribute('y2', '5');
+        };
+
+        const closeMenu = () => {
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+            
+            const lines = menuToggle.querySelectorAll('line');
+            lines[0].setAttribute('x1', '4'); lines[0].setAttribute('y1', '6'); lines[0].setAttribute('x2', '20'); lines[0].setAttribute('y2', '6');
+            lines[1].style.opacity = '1';
+            lines[2].setAttribute('x1', '4'); lines[2].setAttribute('y1', '18'); lines[2].setAttribute('x2', '20'); lines[2].setAttribute('y2', '18');
+        };
+
+        menuToggle.addEventListener('click', () => {
             if (navbar.classList.contains('active')) {
-                // Morph to close "X"
-                lines[0].setAttribute('x1', '5'); lines[0].setAttribute('y1', '5'); lines[0].setAttribute('x2', '19'); lines[0].setAttribute('y2', '19');
-                lines[1].style.opacity = '0';
-                lines[2].setAttribute('x1', '5'); lines[2].setAttribute('y1', '19'); lines[2].setAttribute('x2', '19'); lines[2].setAttribute('y2', '5');
-                document.body.style.overflow = 'hidden'; // Lock scrolling
+                closeMenu();
             } else {
-                // Morph back to hamburger
-                lines[0].setAttribute('x1', '4'); lines[0].setAttribute('y1', '6'); lines[0].setAttribute('x2', '20'); lines[0].setAttribute('y2', '6');
-                lines[1].style.opacity = '1';
-                lines[2].setAttribute('x1', '4'); lines[2].setAttribute('y1', '18'); lines[2].setAttribute('x2', '20'); lines[2].setAttribute('y2', '18');
-                document.body.style.overflow = 'auto'; // Unlock scrolling
+                openMenu();
             }
         });
+
+        // Close on overlay click
+        overlay.addEventListener('click', closeMenu);
 
         // Close navbar on link click (mobile)
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (navbar.classList.contains('active')) {
-                    navbar.classList.remove('active');
-                    const lines = menuToggle.querySelectorAll('line');
-                    lines[0].setAttribute('x1', '4'); lines[0].setAttribute('y1', '6'); lines[0].setAttribute('x2', '20'); lines[0].setAttribute('y2', '6');
-                    lines[1].style.opacity = '1';
-                    lines[2].setAttribute('x1', '4'); lines[2].setAttribute('y1', '18'); lines[2].setAttribute('x2', '20'); lines[2].setAttribute('y2', '18');
-                    document.body.style.overflow = 'auto';
+                    closeMenu();
                 }
             });
         });
