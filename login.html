@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stackly - Login. Patient and Physician authentication portal.">
+    <title>Login | Stackly Patient Portal</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="overflow-y: hidden;">
+
+    <!-- ==========================================
+       PRELOADER (HEARTBEAT PULSE)
+       ========================================== -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.png" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR
+       ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Stackly Logo" class="brand-logo-img">
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html#doctors">Our Doctors</a></li>
+                    <li><a href="blog.html">Health Tips</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-controls">
+                
+                <a href="login.html" class="btn btn-secondary btn-sm active" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Login</a>
+                <a href="services.html#booking" class="btn btn-primary btn-sm" style="padding: 0.6rem 1.4rem; font-size: 0.9rem;">Book Slot</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       LOGIN SEC CARD
+       ========================================== -->
+    <section class="auth-sec">
+        <div class="auth-card reveal reveal-scale">
+            <h2>Welcome <span>Back</span></h2>
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <div class="form-control-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <input type="email" id="login-email" placeholder="john@example.com" style="padding-left: 2.2rem;" required>
+                    </div>
+                    <span class="error-msg">Please enter a valid email.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="form-control-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <input type="password" id="login-password" placeholder="••••••••" style="padding-left: 2.2rem;" required>
+                    </div>
+                    <span class="error-msg">Please enter your password.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-role">Select Portal Role</label>
+                    <div class="form-control-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <select id="login-role" style="padding-left: 2.2rem;" required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="patient">Patient Portal</option>
+                            <option value="doctor">Physician Portal</option>
+                            <option value="admin">Administrator</option>
+                        </select>
+                    </div>
+                    <span class="error-msg">Please select your portal role.</span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Access Portal</button>
+            </form>
+            
+            <div class="auth-footer">
+                Don't have a health account? <a href="register.html">Register Here</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER SECTION
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none; padding-top:0;">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Main logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>

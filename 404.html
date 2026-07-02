@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stackly - Page Not Found.">
+    <title>404 Page Not Found | Stackly Clinic</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="overflow-y: hidden;">
+
+    <!-- ==========================================
+       PRELOADER (HEARTBEAT PULSE)
+       ========================================== -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.png" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR
+       ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Stackly Logo" class="brand-logo-img">
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html#doctors">Our Doctors</a></li>
+                    <li><a href="blog.html">Health Tips</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-controls">
+                <a href="login.html" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Login</a>
+                <a href="services.html#booking" class="btn btn-primary btn-sm" style="padding: 0.6rem 1.4rem; font-size: 0.9rem;">Book Slot</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       404 SECTION CARD
+       ========================================== -->
+    <section class="auth-sec" style="min-height: calc(100vh - 100px); display: flex; align-items: center; justify-content: center;">
+        <div class="auth-card reveal reveal-scale" style="text-align: center; max-width: 500px;">
+            <div class="logo-icon-wrap" style="width: 70px; height: 70px; margin: 0 auto 1.5rem auto; background: rgba(248, 113, 113, 0.1); color: var(--emergency);">
+                <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h2 style="font-size: 3.5rem; margin-bottom: 0.5rem; font-weight: 800; background: linear-gradient(135deg, var(--emergency), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">404</h2>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">Page Not Found</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">The clinical file, health article, or page you are looking for has been moved, archived, or doesn't exist.</p>
+            <a href="index.html" class="btn btn-primary" style="width: 100%;">Return to Home Page <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER SECTION
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none; padding-top:0;">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Main logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>

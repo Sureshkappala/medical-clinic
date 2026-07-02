@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stackly - Services. Specialized Cardiology, Pediatrics, Neurology, Orthopedics, and Lab diagnostics. Book slots online.">
+    <title>Medical Services & Booking | Stackly</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="overflow-y: hidden;">
+
+    <!-- ==========================================
+       PRELOADER (HEARTBEAT PULSE)
+       ========================================== -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.png" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR
+       ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Stackly Logo" class="brand-logo-img">
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html#doctors">Our Doctors</a></li>
+                    <li><a href="blog.html">Health Tips</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-controls">
+                
+                <a href="login.html" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Login</a>
+                <a href="#booking" class="btn btn-primary btn-sm" style="padding: 0.6rem 1.4rem; font-size: 0.9rem;">Book Slot</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       INNER HERO BREADCRUMB
+       ========================================== -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1>Clinical Services</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       DETAILED SERVICES GRID
+       ========================================== -->
+    <section class="services" id="services-list" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="why-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 5rem; align-items: center;">
+                <div>
+                    <span class="badge" style="display:inline-block; margin-bottom:1rem;">Specialized Care Wards</span>
+                    <h2 style="font-size: 2.2rem; font-weight: 800; line-height: 1.25;">Healthcare Tailored To Your Clinical Needs</h2>
+                </div>
+                <p style="color: var(--text-muted);">Stackly manages critical, diagnostics, and elective surgical units under one umbrella. Our team of specialists coordinate closely to deliver a comprehensive patient recovery roadmap.</p>
+            </div>
+
+            <div class="why-features" style="grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="service-card" style="flex: unset;">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <h3>Cardiology Diagnostics</h3>
+                    <p>Complete cardiac health evaluations including Electrocardiograms (ECG), echocardiogram, stress screenings, and heart failure management.</p>
+                    <a href="#booking" class="service-link">Consult Specialist <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+                <div class="service-card" style="flex: unset;">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                    <h3>Pediatric Wellness</h3>
+                    <p>Compassionate care for infants, children, and adolescents. Focuses on developmental milestones, vaccinations, and chronic pediatric conditions.</p>
+                    <a href="#booking" class="service-link">Consult Specialist <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+                <div class="service-card" style="flex: unset;">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.88A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.88A2.5 2.5 0 0 0 14.5 2Z"/></svg></div>
+                    <h3>Neurology Research</h3>
+                    <p>Comprehensive neurological consultation for chronic headaches, nervous system balance problems, sleep distress, and stroke preventions.</p>
+                    <a href="#booking" class="service-link">Consult Specialist <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+                <div class="service-card" style="flex: unset;">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/></svg></div>
+                    <h3>Orthopedic Surgery</h3>
+                    <p>Management of bone fractures, joint replacements, sports injuries, and advanced spinal care using keyhole minimally invasive surgical methods.</p>
+                    <a href="#booking" class="service-link">Consult Specialist <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       HOSPITAL DEPARTMENTS SECTION (TABS)
+       ========================================== -->
+    <section class="departments" id="departments">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="badge">Specialties</span>
+                <h2>Our Specialized Medical Units</h2>
+                <p>Equipped with specialized wards and intensive medical modules to support various areas of healthcare.</p>
+            </div>
+            
+            <!-- Tab buttons -->
+            <div class="dept-tabs reveal">
+                <button class="dept-tab-btn active" data-tab="cardiology"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Cardiology</button>
+                <button class="dept-tab-btn" data-tab="pediatrics"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> Pediatrics</button>
+                <button class="dept-tab-btn" data-tab="neurology"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.88A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.88A2.5 2.5 0 0 0 14.5 2Z"/></svg> Neurology</button>
+                <button class="dept-tab-btn" data-tab="orthopedics"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/></svg> Orthopedics</button>
+                <button class="dept-tab-btn" data-tab="lab"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="M16 2v10a4 4 0 0 1-8 0V2M6 2h12M12 2v10"/></svg> Diagnostics Lab</button>
+            </div>
+            
+            <!-- Tab Panels -->
+            <div class="dept-panel-wrap reveal reveal-scale">
+                <div class="dept-panel active" id="cardiology">
+                    <div class="dept-panel-content">
+                        <h3>Cardiovascular Excellence Center</h3>
+                        <p>Our Cardiology department specializes in treating complex heart diseases and vascular disorders using modern echocardiography, ECG arrays, and cardiac catheters.</p>
+                        <div class="dept-points">
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Advanced ECG screenings</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Heart failure therapy</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Angioplasty recovery</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Pacemaker checkups</div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                    <div class="dept-panel-img">
+                        <img src="images/services/cardiology.webp" alt="Cardiology Center" loading="lazy">
+                    </div>
+                </div>
+                <!-- Pediatrics -->
+                <div class="dept-panel" id="pediatrics">
+                    <div class="dept-panel-content">
+                        <h3>Pediatric & Child Wellness Clinic</h3>
+                        <p>A child-friendly department committed to protecting developmental milestones and health profiles of young infants and kids with custom care plans.</p>
+                        <div class="dept-points">
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Pediatric Immunizations</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Child nutrition counseling</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Growth milestones check</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Pediatric emergencies</div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                    <div class="dept-panel-img">
+                        <img src="images/services/pediatrics.webp" alt="Pediatric Department" loading="lazy">
+                    </div>
+                </div>
+                <!-- Neurology -->
+                <div class="dept-panel" id="neurology">
+                    <div class="dept-panel-content">
+                        <h3>Neurological & Brain Sciences</h3>
+                        <p>Specialized treatments for neuromuscular disorders, central nervous system anomalies, sleep pathology, and cognitive therapy programs.</p>
+                        <div class="dept-points">
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Brain EEG scanning</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Migraine therapeutics</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sleep cycle monitoring</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Neuromuscular therapy</div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                    <div class="dept-panel-img">
+                        <img src="images/services/neurology.webp" alt="Neurology Center" loading="lazy">
+                    </div>
+                </div>
+                <!-- Orthopedics -->
+                <div class="dept-panel" id="orthopedics">
+                    <div class="dept-panel-content">
+                        <h3>Orthopedic Joint & Bone Center</h3>
+                        <p>Focused on bones, muscles, and ligament health. We treat sports traumas, structural spine disorders, arthritis, and complete joint replacements.</p>
+                        <div class="dept-points">
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Bone density tests</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Joint replacement surgery</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Spine adjustment therapy</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Sports medicine rehab</div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                    <div class="dept-panel-img">
+                        <img src="images/services/orthopedics.webp" alt="Orthopedic Surgery Unit" loading="lazy">
+                    </div>
+                </div>
+                <!-- Lab -->
+                <div class="dept-panel" id="lab">
+                    <div class="dept-panel-content">
+                        <h3>Advanced Pathology & Diagnostics Lab</h3>
+                        <p>Computerized blood works, high-end scans, and fast cellular tests. Ensuring your doctors have high-precision analytical values for health tracking.</p>
+                        <div class="dept-points">
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Computerized blood work</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Rapid PCR evaluations</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Ultrasound diagnostics</div>
+                            <div class="dept-point-item"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color: var(--success); margin-right: 4px;"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Cancer biopsy profiling</div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary">Schedule Test</a>
+                    </div>
+                    <div class="dept-panel-img">
+                        <img src="images/gallery/clinic-lab.webp" alt="Diagnostics Lab" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       APPOINTMENT BOOKING SECTION
+       ========================================== -->
+    <section class="booking" id="booking">
+        <div class="container booking-grid">
+            <div class="booking-info reveal reveal-left">
+                <h2>Schedule Your Visit. <span>Get Better Today.</span></h2>
+                <p>Fill out the diagnostics booking slot. Our staff will confirm your timing over call within 15 minutes of registration.</p>
+                
+                <div class="booking-cards">
+                    <div class="booking-feature-item">
+                        <div class="bfi-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/><path d="M7 16c0-2.2 1.8-4 4-4h2c2.2 0 4 1.8 4 4"/></svg></div>
+                        <div class="bfi-content">
+                            <h4>Confidential Health Data</h4>
+                            <p>We respect clinical confidentiality protocols. Your health record is encrypted.</p>
+                        </div>
+                    </div>
+                    <div class="booking-feature-item">
+                        <div class="bfi-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                        <div class="bfi-content">
+                            <h4>Complete Diagnostic Copy</h4>
+                            <p>Get computerized laboratory summaries directly delivered to your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form-wrap reveal reveal-right reveal-delay-2">
+                <h3>Book Appointment</h3>
+                <form id="booking-form" novalidate>
+                    <div class="form-group">
+                        <label for="booking-name">Full Name</label>
+                        <div class="form-control-wrap">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <input type="text" id="booking-name" placeholder="John Doe" style="padding-left: 2.2rem;" required>
+                        </div>
+                        <span class="error-msg">Please enter your name.</span>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="booking-email">Email Address</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <input type="email" id="booking-email" placeholder="john@example.com" style="padding-left: 2.2rem;" required>
+                            </div>
+                            <span class="error-msg">Please enter a valid email.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone Number</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <input type="tel" id="booking-phone" placeholder="123-456-7890" style="padding-left: 2.2rem;" required>
+                            </div>
+                            <span class="error-msg">Please enter a valid phone.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="booking-dept">Department</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="9" width="18" height="12" rx="2" ry="2"/><path d="M12 2v7M9 5h6"/></svg>
+                                <select id="booking-dept" style="padding-left: 2.2rem;" required>
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="neurology">Neurology</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                </select>
+                            </div>
+                            <span class="error-msg">Select a department.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-doctor">Specialist Doctor</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <select id="booking-doctor" style="padding-left: 2.2rem;" required>
+                                    <option value="" disabled selected>Select Doctor</option>
+                                    <option value="vance">Dr. Adrian Vance (Cardiology)</option>
+                                    <option value="jenkins">Dr. Sarah Jenkins (Pediatrics)</option>
+                                    <option value="cross">Dr. Julian Cross (Neurology)</option>
+                                    <option value="rostova">Dr. Elena Rostova (Orthopedics)</option>
+                                </select>
+                            </div>
+                            <span class="error-msg">Select a doctor.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="booking-date">Appointment Date</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                <input type="date" id="booking-date" style="padding-left: 2.2rem;" required>
+                            </div>
+                            <span class="error-msg">Select a valid date.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Preferred Time</label>
+                            <div class="form-control-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <select id="booking-time" style="padding-left: 2.2rem;" required>
+                                    <option value="" disabled selected>Select Time Slot</option>
+                                    <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
+                                    <option value="afternoon">Afternoon (01:00 PM - 04:00 PM)</option>
+                                    <option value="evening">Evening (05:00 PM - 08:00 PM)</option>
+                                </select>
+                            </div>
+                            <span class="error-msg">Select a time slot.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="booking-message">Symptoms / Notes (Optional)</label>
+                        <textarea id="booking-message" placeholder="Briefly describe your symptoms..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Confirm Appointment Slot</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       APPOINTMENT SUCCESS CONFIRMATION MODAL
+       ========================================== -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-modal-overlay"></div>
+        <div class="success-modal-content">
+            <div class="success-icon-wrap">
+                <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Slot Reserved Successfully!</h4>
+            <p>Your appointment ticket has been compiled. Show this receipt during check-in.</p>
+            
+            <div style="background-color: var(--bg-primary); border: 1px dashed var(--border-glass); border-radius: var(--radius-md); padding: 1.5rem; text-align: left; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-glass); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+                    <span style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">Ticket Number</span>
+                    <span style="font-weight: 800; color: var(--primary);" id="ticket-id">#129482</span>
+                </div>
+                <div style="margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-size: 0.9rem;">
+                    <span style="color: var(--text-muted);">Patient Name:</span>
+                    <strong style="color: var(--text-main);" id="ticket-patient">John Doe</strong>
+                </div>
+                <div style="margin-bottom: 0.6rem; display: flex; justify-content: space-between; font-size: 0.9rem;">
+                    <span style="color: var(--text-muted);">Consultant Specialist:</span>
+                    <strong style="color: var(--text-main);" id="ticket-doctor">Dr. Adrian Vance</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                    <span style="color: var(--text-muted);">Confirmed Date:</span>
+                    <strong style="color: var(--text-main);" id="ticket-date">Monday, July 14, 2026</strong>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="close-modal" style="width: 100%;">Close Ticket & Return</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       FOOTER SECTION
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="logo" style="font-size: 1.3rem;">
+                        <img src="images/logo.png" alt="Stackly Logo" class="brand-logo-img">
+                    </a>
+                    <p>Offering world-caliber medical practices, advanced diagnostics, and holistic family counseling programs.</p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="404.html" aria-label="Twitter"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                        <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Home</a></li>
+                        <li><a href="about.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> About Us</a></li>
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Services</a></li>
+                        <li><a href="about.html#doctors"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Our Doctors</a></li>
+                        <li><a href="services.html#booking"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Book Slots</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Specialties</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Cardiology</a></li>
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Pediatrics</a></li>
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Neurology</a></li>
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Orthopedics</a></li>
+                        <li><a href="services.html"><svg viewBox="0 0 24 24" width="10" height="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><polyline points="9 18 15 12 9 6"/></svg> Pathology Lab</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col newsletter-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive medical tips and clinical updates from our team.</p>
+                    <form class="newsletter-form" novalidate>
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+       FLOATING INTERACTION UTILITIES
+       ========================================== -->
+    <div class="back-to-top" role="button" aria-label="Scroll back to top">
+        <svg class="btt-svg" viewBox="0 0 50 50">
+            <circle class="btt-circle" cx="25" cy="25" r="22"></circle>
+        </svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: relative; z-index: 2;"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </div>
+
+    
+
+    <!-- JavaScript Main logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
