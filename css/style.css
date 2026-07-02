@@ -2877,3 +2877,30 @@ body.dark .map-embed iframe {
     text-decoration: underline;
 }
 
+/* Mobile CTA Button Drawer Handling */
+.nav-mobile-cta {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .nav-controls .btn {
+        display: none;
+    }
+    .nav-mobile-cta {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+    .nav-mobile-cta .btn {
+        display: block !important;
+        width: 100% !important;
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        border-radius: var(--radius-sm);
+    }
+}
+
+
