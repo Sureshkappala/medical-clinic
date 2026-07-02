@@ -648,6 +648,12 @@ function initFormValidations() {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
             if (validateForm(registerForm)) {
+                const termsCheckbox = document.getElementById('register-terms');
+                if (termsCheckbox && !termsCheckbox.checked) {
+                    alertCustom("Please agree to the Terms & Conditions to register.", true);
+                    return;
+                }
+                
                 const pass = document.getElementById('register-password').value;
                 const confirmPass = document.getElementById('register-confirm').value;
                 

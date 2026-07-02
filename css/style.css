@@ -2961,4 +2961,33 @@ body.dark .map-embed iframe {
     }
 }
 
+/* Auth Checkbox Options Layout */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+.checkbox-group input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
+}
+.auth-options a {
+    color: var(--primary);
+    font-weight: 600;
+}
+.auth-options a:hover {
+    text-decoration: underline;
+}
+
 
