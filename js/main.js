@@ -653,9 +653,14 @@ function initFormValidations() {
                     group.classList.add('invalid');
                     return;
                 }
-                alertCustom("Login successful! Welcome back to Stackly.");
+                const roleVal = document.getElementById('login-role').value;
+                alertCustom(`Login successful! Welcome back to Stackly.`);
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    if (roleVal === 'admin') {
+                        window.location.href = 'admin-dashboard.html';
+                    } else {
+                        window.location.href = 'patient-dashboard.html';
+                    }
                 }, 1500);
             }
         });

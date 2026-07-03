@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stackly Clinic Patient Portal Dashboard. Manage your medical bookings, records, and billing.">
+    <title>Stackly Clinic | Patient Portal Dashboard</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--bg-primary);">
+
+    <!-- ==========================================
+       PRELOADER (HEARTBEAT PULSE)
+       ========================================== -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.webp" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- Scroll Progress & Custom Cursor -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR (DASHBOARD MODE)
+       ========================================== -->
+    <header class="header scrolled" style="position: sticky; top: 0; background-color: var(--bg-glass-nav);">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Stackly Logo" class="brand-logo-img">
+            </a>
+            
+            <nav class="navbar">
+                <div class="mobile-search" style="display: none;">
+                    <input type="text" placeholder="Search portal...">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="services.html">Wards & Booking</a></li>
+                    <li><a href="about.html">About Clinic</a></li>
+                </ul>
+                <div class="nav-mobile-cta">
+                    <a href="login.html" class="btn btn-secondary">Log Out</a>
+                </div>
+            </nav>
+            
+            <div class="nav-controls">
+                <a href="login.html" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1.4rem; font-size: 0.9rem;">Log Out</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       PATIENT DASHBOARD SECTION
+       ========================================== -->
+    <main class="container" style="padding: 4rem 0 6rem 0;">
+        <!-- Welcome banner -->
+        <div class="reveal" style="margin-bottom: 3rem;">
+            <span class="badge" style="margin-bottom: 0.8rem;">Patient Portal</span>
+            <h1 style="font-size: 2.8rem; font-weight: 800; margin: 0 0 0.5rem 0; background: linear-gradient(135deg, var(--text-light), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Hello, Richard Henderson</h1>
+            <p style="color: var(--text-muted); margin: 0;">Welcome back to Stackly. Access your upcoming clinical visits, lab reports, and medication details.</p>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="reveal reveal-scale" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <!-- Card 1 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); position: relative; overflow: hidden; border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.05em; text-transform: uppercase;">Next Appointment</span>
+                <h3 style="font-size: 1.5rem; margin: 0.8rem 0; color: var(--text-main);">Dr. Adrian Vance</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Cardiology Consultation</p>
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; font-size: 0.85rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Tomorrow, 10:30 AM
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); position: relative; overflow: hidden; border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--success); letter-spacing: 0.05em; text-transform: uppercase;">Lab Diagnostics</span>
+                <h3 style="font-size: 1.5rem; margin: 0.8rem 0; color: var(--text-main);">Cardiac Report</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Completed (20 mins ago)</p>
+                <a href="404.html" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--success); font-weight: 600; font-size: 0.85rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF Report
+                </a>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); position: relative; overflow: hidden; border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase;">Active Prescriptions</span>
+                <h3 style="font-size: 1.5rem; margin: 0.8rem 0; color: var(--text-main);">Cardvedilol (25mg)</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Take twice daily after meals</p>
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent); font-weight: 600; font-size: 0.85rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+                    Refill Available (3 left)
+                </div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start;">
+            <!-- Left Side: Appointment List -->
+            <div class="reveal reveal-left" style="display: flex; flex-direction: column; gap: 2rem;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-main);">Appointment History</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Appointment 1 -->
+                    <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary); background-color: var(--bg-tertiary);">
+                                <img src="images/doctors/doctor1.webp" alt="Doctor" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.3rem 0; color: var(--text-main);">Dr. Adrian Vance</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Cardiology Specialty</span>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.3rem 0;">July 04, 2026</p>
+                            <span style="display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; background: rgba(34, 211, 238, 0.15); color: var(--primary);">Upcoming</span>
+                        </div>
+                    </div>
+                    <!-- Appointment 2 -->
+                    <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--success); background-color: var(--bg-tertiary);">
+                                <img src="images/doctors/doctor3.webp" alt="Doctor" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 0.3rem 0; color: var(--text-main);">Dr. Julian Cross</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Neurology Specialty</span>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin: 0 0 0.3rem 0;">June 18, 2026</p>
+                            <span style="display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; background: rgba(16, 185, 129, 0.15); color: var(--success);">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Vitals Metrics -->
+            <div class="reveal reveal-right" style="display: flex; flex-direction: column; gap: 2rem;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-main);">Health Tracking</h2>
+                <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin: 0 0 1.5rem 0; color: var(--text-main);">Your Vitals</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <span style="color: var(--text-muted);">Heart Rate (bpm)</span>
+                                <span style="color: var(--primary);">72 / 100</span>
+                            </div>
+                            <div style="height: 6px; background-color: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: 72%; background-color: var(--primary); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <span style="color: var(--text-muted);">Blood Pressure (mmHg)</span>
+                                <span style="color: var(--success);">120 / 80</span>
+                            </div>
+                            <div style="height: 6px; background-color: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: 90%; background-color: var(--success); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <span style="color: var(--text-muted);">Cholesterol (mg/dL)</span>
+                                <span style="color: var(--emergency);">195 / 200</span>
+                            </div>
+                            <div style="height: 6px; background-color: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: 95%; background-color: var(--emergency); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <svg class="btt-circle" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" class="btt-arrow"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+
+    <!-- ==========================================
+       FOOTER SECTION (DASHBOARD BRIEF)
+       ========================================== -->
+    <footer class="footer" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: 1px solid var(--border-glass); padding-top: 2rem;">
+                <p>&copy; 2026 Stackly Patient Portal. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Main logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stackly Clinic Administrator Portal Control Center. Manage patient list, doctor lists, and appointments.">
+    <title>Stackly Clinic | Administrator Dashboard</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--bg-primary);">
+
+    <!-- ==========================================
+       PRELOADER (HEARTBEAT PULSE)
+       ========================================== -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.webp" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- Scroll Progress & Custom Cursor -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR (DASHBOARD MODE)
+       ========================================== -->
+    <header class="header scrolled" style="position: sticky; top: 0; background-color: var(--bg-glass-nav);">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Stackly Logo" class="brand-logo-img">
+            </a>
+            
+            <nav class="navbar">
+                <div class="mobile-search" style="display: none;">
+                    <input type="text" placeholder="Search admin panels...">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Main Website</a></li>
+                    <li><a href="services.html">Wards & Bookings</a></li>
+                    <li><a href="about.html">Specialists List</a></li>
+                </ul>
+                <div class="nav-mobile-cta">
+                    <a href="login.html" class="btn btn-secondary">Log Out</a>
+                </div>
+            </nav>
+            
+            <div class="nav-controls">
+                <a href="login.html" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1.4rem; font-size: 0.9rem;">Log Out</a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       ADMIN CONTROL CENTER
+       ========================================== -->
+    <main class="container" style="padding: 4rem 0 6rem 0;">
+        <!-- Welcome header -->
+        <div class="reveal" style="margin-bottom: 3rem;">
+            <span class="badge" style="margin-bottom: 0.8rem; background: rgba(248, 113, 113, 0.15); color: var(--emergency);">Admin Console</span>
+            <h1 style="font-size: 2.8rem; font-weight: 800; margin: 0 0 0.5rem 0; background: linear-gradient(135deg, var(--text-light), var(--emergency)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Clinic Control Center</h1>
+            <p style="color: var(--text-muted); margin: 0;">Access system logs, physician active status shifts, and diagnostic queue lists.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="reveal reveal-scale" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+            <!-- Card 1 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.05em; text-transform: uppercase;">Total Patients</span>
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; color: var(--text-main);">15,246</h3>
+                <p style="color: var(--success); font-size: 0.85rem; font-weight: 600; margin: 0;">+12% vs last month</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase;">Today's Visits</span>
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; color: var(--text-main);">84</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">18 bookings remaining</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--success); letter-spacing: 0.05em; text-transform: uppercase;">On-Duty Doctors</span>
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; color: var(--text-main);">18 / 24</h3>
+                <p style="color: var(--success); font-size: 0.85rem; font-weight: 600; margin: 0;">Fully staffed shifts</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--emergency); letter-spacing: 0.05em; text-transform: uppercase;">Urgent Cases</span>
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0; color: var(--text-main);">4</h3>
+                <p style="color: var(--emergency); font-size: 0.85rem; font-weight: 600; margin: 0;">Critical triage active</p>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+            <!-- Left Column: Pending Bookings Queue -->
+            <div class="reveal reveal-left" style="display: flex; flex-direction: column; gap: 2rem;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-main);">Appointment Management</h2>
+                
+                <div style="overflow-x: auto; background: var(--bg-glass); backdrop-filter: blur(12px); border-radius: var(--radius-md); border: 1px solid var(--border-glass); padding: 1.5rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 500px;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-glass); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+                                <th style="padding: 1rem 0.5rem;">Patient</th>
+                                <th style="padding: 1rem 0.5rem;">Department</th>
+                                <th style="padding: 1rem 0.5rem;">Doctor</th>
+                                <th style="padding: 1rem 0.5rem;">Date / Time</th>
+                                <th style="padding: 1rem 0.5rem; text-align: right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-glass); font-size: 0.9rem; color: var(--text-main);">
+                                <td style="padding: 1.2rem 0.5rem; font-weight: 600;">Richard Henderson</td>
+                                <td style="padding: 1.2rem 0.5rem;">Cardiology</td>
+                                <td style="padding: 1.2rem 0.5rem;">Dr. Adrian Vance</td>
+                                <td style="padding: 1.2rem 0.5rem;">04 July, 10:30 AM</td>
+                                <td style="padding: 1.2rem 0.5rem; text-align: right;"><span style="display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; background: rgba(34, 211, 238, 0.15); color: var(--primary);">Approved</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-glass); font-size: 0.9rem; color: var(--text-main);">
+                                <td style="padding: 1.2rem 0.5rem; font-weight: 600;">Emily Thompson</td>
+                                <td style="padding: 1.2rem 0.5rem;">Pediatrics</td>
+                                <td style="padding: 1.2rem 0.5rem;">Dr. Sarah Jenkins</td>
+                                <td style="padding: 1.2rem 0.5rem;">05 July, 02:00 PM</td>
+                                <td style="padding: 1.2rem 0.5rem; text-align: right;"><span style="display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; background: rgba(251, 191, 36, 0.15); color: #fbbf24;">Pending Approval</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-glass); font-size: 0.9rem; color: var(--text-main);">
+                                <td style="padding: 1.2rem 0.5rem; font-weight: 600;">Marcus Brodin</td>
+                                <td style="padding: 1.2rem 0.5rem;">Neurology</td>
+                                <td style="padding: 1.2rem 0.5rem;">Dr. Julian Cross</td>
+                                <td style="padding: 1.2rem 0.5rem;">06 July, 11:15 AM</td>
+                                <td style="padding: 1.2rem 0.5rem; text-align: right;"><span style="display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; background: rgba(251, 191, 36, 0.15); color: #fbbf24;">Pending Approval</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Column: System Health Checks -->
+            <div class="reveal reveal-right" style="display: flex; flex-direction: column; gap: 2rem;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; margin: 0; color: var(--text-main);">Server Health</h2>
+                <div class="glass-card" style="padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+                    <h3 style="font-size: 1.2rem; font-weight: 700; margin: 0 0 1.5rem 0; color: var(--text-main);">Clinical Node Monitors</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--success); box-shadow: 0 0 10px var(--success);"></div>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Main Database</span>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">99.98% SLA</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--success); box-shadow: 0 0 10px var(--success);"></div>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Patient Telemetry</span>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Active Link</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="width: 10px; height: 10px; border-radius: 50%; background-color: var(--success); box-shadow: 0 0 10px var(--success);"></div>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Lab Reporting API</span>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Uptime 100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <svg class="btt-circle" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" class="btt-arrow"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+
+    <!-- ==========================================
+       FOOTER SECTION (DASHBOARD BRIEF)
+       ========================================== -->
+    <footer class="footer" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: 1px solid var(--border-glass); padding-top: 2rem;">
+                <p>&copy; 2026 Stackly Admin Portal. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Main logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
