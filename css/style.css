@@ -244,7 +244,7 @@ ul {
 }
 
 .brand-logo-img {
-    height: 38px;
+    height: 48px;
     width: auto;
     object-fit: contain;
     background-color: transparent;
@@ -253,7 +253,7 @@ ul {
 }
 
 .preloader-logo-img {
-    height: 42px;
+    height: 52px;
     width: auto;
     object-fit: contain;
     background-color: transparent;
@@ -264,10 +264,10 @@ ul {
 
 @media (max-width: 768px) {
     .brand-logo-img {
-        height: 32px;
+        height: 40px;
     }
     .preloader-logo-img {
-        height: 36px;
+        height: 44px;
     }
 }
 
@@ -807,7 +807,7 @@ body.dark .section-divider svg {
    ABOUT CLINIC SECTION
    ========================================================================== */
 .about {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background-color: var(--bg-secondary);
 }
 
@@ -2656,6 +2656,11 @@ body.dark .map-embed iframe {
 .reveal-delay-2 { transition-delay: 0.3s; }
 .reveal-delay-3 { transition-delay: 0.45s; }
 
+/* Mobile Navigation Drawer Header default state */
+.drawer-header {
+    display: none;
+}
+
 /* ==========================================================================
    MOBILE RESPONSIVENESS OVERRIDES
    ========================================================================== */
@@ -2665,6 +2670,25 @@ body.dark .map-embed iframe {
         display: flex;
     }
     
+    .drawer-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border-glass);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .drawer-close {
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    
+    .drawer-close:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -2677,11 +2701,11 @@ body.dark .map-embed iframe {
         border-left: 1px solid var(--border-glass);
         flex-direction: column;
         align-items: flex-start;
-        padding: 6rem 2.5rem 3rem 2.5rem;
-        gap: 3rem;
+        padding: 0 0 3rem 0;
+        gap: 2rem;
         box-shadow: var(--shadow-lg);
         transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        z-index: 850;
+        z-index: 2000;
         overflow-y: auto;
     }
     
@@ -2693,6 +2717,8 @@ body.dark .map-embed iframe {
         flex-direction: column;
         gap: 1.8rem;
         width: 100%;
+        padding: 0 24px;
+        box-sizing: border-box;
     }
     
     .nav-links a {
@@ -2728,7 +2754,7 @@ body.dark .map-embed iframe {
     }
     
     .hero-image-wrap {
-        order: -1;
+        order: 2;
     }
     
     .floating-card.fc-1 {
@@ -2902,6 +2928,8 @@ body.dark .map-embed iframe {
         width: 100%;
         margin-top: 1.5rem;
         gap: 1rem;
+        padding: 0 24px;
+        box-sizing: border-box;
     }
     .nav-mobile-cta .btn {
         display: block !important;
@@ -3007,6 +3035,10 @@ body.menu-open {
     height: 100% !important;
 }
 
+body.menu-open .header {
+    z-index: 3000 !important;
+}
+
 /* Mobile Drawer Overlay background */
 .drawer-overlay {
     position: fixed;
@@ -3017,7 +3049,7 @@ body.menu-open {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    z-index: 800; /* Behind navbar drawer (850) and above page content */
+    z-index: 1999; /* Behind navbar drawer (2000) and above page content */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -3039,7 +3071,8 @@ body.menu-open {
         width: 100%;
         margin-top: 1.5rem;
         border-top: 1px solid var(--border-glass);
-        padding-top: 1.5rem;
+        padding: 1.5rem 24px 0 24px;
+        box-sizing: border-box;
         text-align: left;
     }
     .nav-mobile-contact h4 {
@@ -3080,6 +3113,9 @@ body.menu-open {
         position: relative;
         width: 100%;
         margin-bottom: 1.5rem;
+        padding: 0 24px;
+        box-sizing: border-box;
+        margin-top: 1.5rem;
     }
     .mobile-search input {
         width: 100%;
@@ -3097,7 +3133,7 @@ body.menu-open {
     }
     .mobile-search svg {
         position: absolute;
-        right: 1rem;
+        right: 2.2rem;
         top: 50%;
         transform: translateY(-50%);
         color: var(--text-muted);

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reach patient portal support desks.">
+    <title>Stackly Clinic | Support Desk</title>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .dash-table th, .dash-table td {
+            white-space: nowrap !important;
+        }
+        .dash-table {
+            width: 100% !important;
+            min-width: max-content !important;
+        }
+        .dash-table-wrapper {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            margin-bottom: 10px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar {
+            height: 8px !important;
+            display: block !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-radius: 4px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-thumb {
+            background-color: #22d3ee !important;
+            border-radius: 4px !important;
+        }
+    </style>
+</head>
+<body style="background-color: var(--bg-primary);">
+
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <svg class="pulse-svg" viewBox="0 0 150 100">
+            <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+            <path class="pulse-path" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
+        </svg>
+        <img src="images/logo.webp" alt="Stackly Logo" class="preloader-logo-img">
+    </div>
+
+    <!-- Scroll Progress & Cursor -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <div class="dash-wrapper">
+        <!-- SIDEBAR -->
+        <aside class="dash-sidebar">
+            <div class="dash-sidebar-header">
+                <a href="patient-dashboard.html" class="logo">
+                    <img src="images/logo.webp" alt="Stackly Logo" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+                </a>
+            </div>
+            <ul class="dash-menu">
+                <li class="dash-menu-item">
+                    <a href="patient-dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                </li>
+                <li class="dash-menu-item">
+                    <a href="patient-profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
+                </li>
+                <li class="dash-menu-item">
+                    <a href="patient-appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li class="dash-menu-item">
+                    <a href="patient-reports.html"><i class="fa-solid fa-file-prescription"></i> Lab Reports</a>
+                </li>
+                <li class="dash-menu-item active">
+                    <a href="patient-support.html"><i class="fa-solid fa-circle-question"></i> Help Desk</a>
+                </li>
+            </ul>
+            <div class="dash-sidebar-footer">
+                <li class="dash-menu-item" style="list-style: none;">
+                    <a href="login.html" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+                </li>
+            </div>
+        </aside>
+
+        <!-- MAIN LAYOUT -->
+        <div class="dash-main">
+            <!-- TOPBAR -->
+            <header class="dash-topbar">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <button class="dash-menu-trigger" aria-label="Toggle Sidebar"><i class="fa-solid fa-bars"></i></button>
+                    <div class="dash-page-title">
+                        <h2>Portal Support Desk</h2>
+                    </div>
+                </div>
+                <div class="dash-topbar-right">
+                    <div class="dash-user-profile">
+                        <img src="images/doctors/doctor1.webp" alt="Avatar">
+                        <div>
+                            <span class="dash-user-name">Richard Henderson</span>
+                            <span class="dash-user-role">Patient Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- INNER MAIN CONTENT -->
+            <main class="dash-content-inner">
+                <div class="dash-two-col-grid">
+                    <!-- Left: Support Ticket form -->
+                    <div class="glass-card" style="padding: 30px;">
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; color: #fff;">File a Support Ticket</h3>
+                        <form id="support-form" onsubmit="event.preventDefault(); alertCustom('Your support ticket has been submitted successfully. A representative will contact you soon.'); this.reset();">
+                            <div class="form-group">
+                                <label>Subject Topic</label>
+                                <input type="text" placeholder="e.g., Portal login issues..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%;" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Detailed Description</label>
+                                <textarea placeholder="Describe the issue in detail..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%; height: 120px; resize: none;" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Submit Support Ticket</button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Tickets history log -->
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <div class="glass-card" style="padding: 30px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Recent Ticket Log</h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; font-size: 14px; margin: 0;">
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+                                    <div>
+                                        <span style="font-weight: 600; color: #fff; display: block;">#TK-9082: Lab PDF Error</span>
+                                        <span style="font-size: 0.75rem; color: var(--text-muted);">Submitted: June 28, 2026</span>
+                                    </div>
+                                    <span class="badge badge-success" style="align-self: center;">Resolved</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="glass-card" style="padding: 30px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Helpful Guides</h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; margin: 0;">
+                                <li><a href="404.html" style="color: var(--primary); font-weight: 600;"><i class="fa-solid fa-circle-question"></i> How do I reset my portal password?</a></li>
+                                <li><a href="404.html" style="color: var(--primary); font-weight: 600;"><i class="fa-solid fa-circle-question"></i> Where do I view my billing records?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

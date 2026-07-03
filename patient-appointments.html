@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Patient Portal Dashboard.">
-    <title>Stackly Clinic | Patient Dashboard</title>
+    <meta name="description" content="View your scheduled appointments and bookings.">
+    <title>Stackly Clinic | My Appointments</title>
     
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboards.css">
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .dash-table th, .dash-table td {
@@ -68,13 +67,13 @@
                 </a>
             </div>
             <ul class="dash-menu">
-                <li class="dash-menu-item active">
+                <li class="dash-menu-item">
                     <a href="patient-dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
                 </li>
                 <li class="dash-menu-item">
                     <a href="patient-profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
                 </li>
-                <li class="dash-menu-item">
+                <li class="dash-menu-item active">
                     <a href="patient-appointments.html"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
                 </li>
                 <li class="dash-menu-item">
@@ -98,7 +97,7 @@
                 <div style="display: flex; align-items: center; gap: 16px;">
                     <button class="dash-menu-trigger" aria-label="Toggle Sidebar"><i class="fa-solid fa-bars"></i></button>
                     <div class="dash-page-title">
-                        <h2>Patient Control Board</h2>
+                        <h2>My Appointments</h2>
                     </div>
                 </div>
                 <div class="dash-topbar-right">
@@ -114,115 +113,66 @@
 
             <!-- INNER MAIN CONTENT -->
             <main class="dash-content-inner">
-                <!-- Welcome Banner -->
-                <div style="margin-bottom: 30px;">
-                    <h1 style="font-size: 2.2rem; font-weight: 800; margin: 0 0 5px 0; color: #fff;">Hello, Richard Henderson</h1>
-                    <p style="color: var(--text-muted); margin: 0;">Access your health tracking monitors, current medical slots, and prescription files.</p>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="dash-metrics-grid">
-                    <div class="metric-card glass-card">
-                        <div class="metric-card-info">
-                            <h3>Next Booking</h3>
-                            <div class="metric-card-val">Dr. Vance</div>
-                        </div>
-                        <div class="metric-card-icon metric-emerald"><i class="fa-solid fa-calendar-day"></i></div>
-                    </div>
-                    <div class="metric-card glass-card">
-                        <div class="metric-card-info">
-                            <h3>Active Meds</h3>
-                            <div class="metric-card-val">2 Prescriptions</div>
-                        </div>
-                        <div class="metric-card-icon metric-cyan"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
-                    </div>
-                    <div class="metric-card glass-card">
-                        <div class="metric-card-info">
-                            <h3>New Reports</h3>
-                            <div class="metric-card-val">1 Pending</div>
-                        </div>
-                        <div class="metric-card-icon metric-emerald"><i class="fa-solid fa-folder-open"></i></div>
-                    </div>
-                    <div class="metric-card glass-card">
-                        <div class="metric-card-info">
-                            <h3>Pending Tickets</h3>
-                            <div class="metric-card-val">0 Active</div>
-                        </div>
-                        <div class="metric-card-icon metric-gold"><i class="fa-solid fa-circle-question"></i></div>
-                    </div>
-                </div>
-
                 <div class="dash-two-col-grid">
-                    <!-- Left: Appointments brief list -->
+                    <!-- Left: Appointments roster list -->
                     <div class="table-card glass-card">
                         <div class="table-card-header">
-                            <h3>Upcoming Visits</h3>
-                            <a href="patient-appointments.html" style="color: var(--primary); font-size: 14px; font-weight: 600;">View All</a>
+                            <h3>Scheduled Bookings</h3>
+                            <a href="services.html#booking" class="btn btn-primary btn-sm"><i class="fa-solid fa-calendar-plus"></i> New Slot</a>
                         </div>
                         <div class="dash-table-wrapper">
                             <table class="dash-table">
                                 <thead>
                                     <tr>
                                         <th>Doctor</th>
-                                        <th>Department</th>
-                                        <th>Date / Time</th>
+                                        <th>Consultation Date</th>
+                                        <th>Session Time</th>
                                         <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td style="font-weight: 600;">Dr. Adrian Vance</td>
-                                        <td>Cardiology</td>
-                                        <td>Tomorrow, 10:30 AM</td>
+                                        <td>04 July 2026</td>
+                                        <td>10:30 AM</td>
                                         <td><span class="badge badge-success">Approved</span></td>
+                                        <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: 600;">Dr. Julian Cross</td>
-                                        <td>Neurology</td>
-                                        <td>18 July, 11:15 AM</td>
+                                        <td>18 July 2026</td>
+                                        <td>11:15 AM</td>
                                         <td><span class="badge badge-warning">Pending</span></td>
+                                        <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <!-- Right: Quick health vitals check -->
+                    <!-- Right: Preparation instructions -->
                     <div class="glass-card" style="padding: 30px;">
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Health Tracking</h3>
-                        <div style="display: flex; flex-direction: column; gap: 20px;">
-                            <div>
-                                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 6px;">
-                                    <span style="color: var(--text-muted);">Heart Rate (bpm)</span>
-                                    <span style="color: var(--primary);">72 / 100</span>
-                                </div>
-                                <div style="height: 6px; background-color: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
-                                    <div style="height: 100%; width: 72%; background-color: var(--primary); border-radius: 3px;"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 6px;">
-                                    <span style="color: var(--text-muted);">Blood Pressure (mmHg)</span>
-                                    <span style="color: var(--success);">120 / 80</span>
-                                </div>
-                                <div style="height: 6px; background-color: var(--bg-tertiary); border-radius: 3px; overflow: hidden;">
-                                    <div style="height: 100%; width: 90%; background-color: var(--success); border-radius: 3px;"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Preparation Guides</h3>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; font-size: 14px;">
+                            <li style="display: flex; gap: 12px; font-size: 14px; color: var(--text-muted);">
+                                <i class="fa-solid fa-circle-info" style="color: var(--primary); font-size: 16px; margin-top: 2px;"></i>
+                                <span>Fast for at least 8 hours prior to diagnostic blood tests.</span>
+                            </li>
+                            <li style="display: flex; gap: 12px; font-size: 14px; color: var(--text-muted);">
+                                <i class="fa-solid fa-circle-info" style="color: var(--primary); font-size: 16px; margin-top: 2px;"></i>
+                                <span>Bring a printed copy or list of all active medications you take.</span>
+                            </li>
+                            <li style="display: flex; gap: 12px; font-size: 14px; color: var(--text-muted);">
+                                <i class="fa-solid fa-circle-info" style="color: var(--primary); font-size: 16px; margin-top: 2px;"></i>
+                                <span>Arrive 15 minutes before your scheduled appointment time.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-
-    <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Back to Top">
-        <svg class="btt-circle" viewBox="0 0 50 50">
-            <circle cx="25" cy="25" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
-        </svg>
-        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" class="btt-arrow"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-    </button>
 
     <script src="js/main.js"></script>
 </body>

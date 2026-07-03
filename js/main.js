@@ -164,6 +164,11 @@ function initNavbar() {
             document.body.classList.add('menu-open');
             document.documentElement.classList.add('menu-open');
             
+            const drawerHeader = navbar.querySelector('.drawer-header');
+            if (drawerHeader) {
+                drawerHeader.style.setProperty('display', 'flex', 'important');
+            }
+            
             const lines = menuToggle.querySelectorAll('line');
             lines[0].setAttribute('x1', '5'); lines[0].setAttribute('y1', '5'); lines[0].setAttribute('x2', '19'); lines[0].setAttribute('y2', '19');
             lines[1].style.opacity = '0';
@@ -175,6 +180,11 @@ function initNavbar() {
             overlay.classList.remove('active');
             document.body.classList.remove('menu-open');
             document.documentElement.classList.remove('menu-open');
+            
+            const drawerHeader = navbar.querySelector('.drawer-header');
+            if (drawerHeader) {
+                drawerHeader.style.setProperty('display', 'none');
+            }
             
             const lines = menuToggle.querySelectorAll('line');
             lines[0].setAttribute('x1', '4'); lines[0].setAttribute('y1', '6'); lines[0].setAttribute('x2', '20'); lines[0].setAttribute('y2', '6');
@@ -192,6 +202,12 @@ function initNavbar() {
 
         // Close on overlay click
         overlay.addEventListener('click', closeMenu);
+
+        // Close on drawer-close click
+        const drawerClose = navbar.querySelector('.drawer-close');
+        if (drawerClose) {
+            drawerClose.addEventListener('click', closeMenu);
+        }
 
         // Close navbar on link click (mobile)
         navLinks.forEach(link => {
@@ -644,25 +660,44 @@ function initFormValidations() {
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (validateForm(loginForm)) {
-                const passVal = document.getElementById('login-password').value;
-                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
-                if (!passwordRegex.test(passVal)) {
-                    alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
-                    const group = document.getElementById('login-password').closest('.form-group');
-                    group.classList.add('invalid');
-                    return;
+            
+            const inputs = loginForm.querySelectorAll('[required]');
+            let hasEmpty = false;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    hasEmpty = true;
+                    input.closest('.form-group').classList.add('invalid');
                 }
-                const roleVal = document.getElementById('login-role').value;
-                alertCustom(`Login successful! Welcome back to Stackly.`);
-                setTimeout(() => {
-                    if (roleVal === 'admin') {
-                        window.location.href = 'admin-dashboard.html';
-                    } else {
-                        window.location.href = 'patient-dashboard.html';
-                    }
-                }, 1500);
+            });
+            if (hasEmpty) {
+                alertCustom("Please fill in all required fields.", true);
+                return;
             }
+
+            const emailInput = document.getElementById('login-email');
+            if (emailInput && !validateEmail(emailInput.value.trim())) {
+                emailInput.closest('.form-group').classList.add('invalid');
+                alertCustom("Please enter a valid email address.", true);
+                return;
+            }
+
+            const passVal = document.getElementById('login-password').value;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
+            if (!passwordRegex.test(passVal)) {
+                alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
+                const group = document.getElementById('login-password').closest('.form-group');
+                group.classList.add('invalid');
+                return;
+            }
+            const roleVal = document.getElementById('login-role').value;
+            alertCustom(`Login successful! Welcome back to Stackly.`);
+            setTimeout(() => {
+                if (roleVal === 'admin') {
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    window.location.href = 'patient-dashboard.html';
+                }
+            }, 1500);
         });
     }
 
@@ -671,36 +706,62 @@ function initFormValidations() {
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (validateForm(registerForm)) {
-                const termsCheckbox = document.getElementById('register-terms');
-                if (termsCheckbox && !termsCheckbox.checked) {
-                    alertCustom("Please agree to the Terms & Conditions to register.", true);
-                    return;
+            
+            const inputs = registerForm.querySelectorAll('[required]');
+            let hasEmpty = false;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    hasEmpty = true;
+                    input.closest('.form-group').classList.add('invalid');
                 }
-                
-                const pass = document.getElementById('register-password').value;
-                const confirmPass = document.getElementById('register-confirm').value;
-                
-                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
-                if (!passwordRegex.test(pass)) {
-                    alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
-                    const group = document.getElementById('register-password').closest('.form-group');
-                    group.classList.add('invalid');
-                    return;
-                }
-                
-                if (pass !== confirmPass) {
-                    const group = document.getElementById('register-confirm').closest('.form-group');
-                    group.classList.add('invalid');
-                    alertCustom("Passwords do not match.", true);
-                    return;
-                }
-                
-                alertCustom("Registration successful! Welcome to Stackly.");
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 1500);
+            });
+            if (hasEmpty) {
+                alertCustom("Please fill in all required fields.", true);
+                return;
             }
+
+            const emailInput = document.getElementById('register-email');
+            if (emailInput && !validateEmail(emailInput.value.trim())) {
+                emailInput.closest('.form-group').classList.add('invalid');
+                alertCustom("Please enter a valid email address.", true);
+                return;
+            }
+
+            const phoneInput = document.getElementById('register-phone');
+            if (phoneInput && !validatePhone(phoneInput.value.trim())) {
+                phoneInput.closest('.form-group').classList.add('invalid');
+                alertCustom("Please enter a valid phone number.", true);
+                return;
+            }
+
+            const termsCheckbox = document.getElementById('register-terms');
+            if (termsCheckbox && !termsCheckbox.checked) {
+                alertCustom("Please agree to the Terms & Conditions to register.", true);
+                return;
+            }
+
+            const pass = document.getElementById('register-password').value;
+            const confirmPass = document.getElementById('register-confirm').value;
+
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-])[A-Za-z\d!@#$%^&*()_+={}\[\]|\\:;\"<>,.?/~`-]{8,}$/;
+            if (!passwordRegex.test(pass)) {
+                alertCustom("Password must contain at least 8 characters, including 1 uppercase, 1 lowercase, 1 number, and 1 special character.", true);
+                const group = document.getElementById('register-password').closest('.form-group');
+                group.classList.add('invalid');
+                return;
+            }
+
+            if (pass !== confirmPass) {
+                const group = document.getElementById('register-confirm').closest('.form-group');
+                group.classList.add('invalid');
+                alertCustom("Passwords do not match.", true);
+                return;
+            }
+
+            alertCustom("Registration successful! Welcome to Stackly.");
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1500);
         });
     }
 }
@@ -889,4 +950,40 @@ function initFieldFilters() {
         });
     });
 }
+
+// Initialize Dashboard sidebar trigger
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.querySelector('.dash-menu-trigger');
+    const sidebar = document.querySelector('.dash-sidebar');
+    if (trigger && sidebar) {
+        const toggleSidebar = () => {
+            const isOpen = sidebar.classList.toggle('active');
+            if (isOpen) {
+                document.body.classList.add('menu-open');
+                document.documentElement.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+                document.documentElement.classList.remove('menu-open');
+            }
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+        };
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
+        });
+        
+        // Close sidebar when clicking outside on content area
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !trigger.contains(e.target)) {
+                closeSidebar();
+            }
+        });
+    }
+});
 
