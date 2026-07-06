@@ -890,11 +890,11 @@ body.dark .section-divider svg {
 }
 
 .about-img.img-1 {
-    transform: translateY(-20px);
+    transform: none;
 }
 
 .about-img.img-2 {
-    transform: translateY(20px);
+    transform: none;
 }
 
 .about-experience-card {
