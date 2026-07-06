@@ -40,6 +40,17 @@
     margin: 0;
 }
 
+.dash-menu-category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    padding: 1.2rem 16px 0.4rem 16px;
+    opacity: 0.5;
+    list-style: none;
+}
+
 .dash-menu-item {
     list-style: none;
 }
@@ -65,7 +76,7 @@
 
 .dash-menu-item a:hover,
 .dash-menu-item.active a {
-    background: rgba(34, 211, 238, 0.1);
+    background: var(--primary-glow);
     color: var(--primary);
 }
 

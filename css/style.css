@@ -9,10 +9,10 @@
     --font-primary: 'Plus Jakarta Sans', sans-serif;
     
     /* Colors HSL & HEX */
-    --primary-hsl: 185, 90%, 35%;
-    --primary: #22d3ee;
-    --primary-hover: #67e8f9;
-    --primary-glow: rgba(34, 211, 238, 0.15);
+    --primary-hsl: 162, 76%, 41%;
+    --primary: #10b981;
+    --primary-hover: #34d399;
+    --primary-glow: rgba(16, 185, 129, 0.15);
     
     --accent-hsl: 201, 96%, 32%;
     --accent: #38bdf8;
@@ -64,9 +64,9 @@ body.dark {
     --text-main: #f3f4f6;
     --text-muted: #9ca3af;
     
-    --primary: #22d3ee;
-    --primary-hover: #67e8f9;
-    --primary-glow: rgba(34, 211, 238, 0.15);
+    --primary: #10b981;
+    --primary-hover: #34d399;
+    --primary-glow: rgba(16, 185, 129, 0.15);
     
     --accent: #38bdf8;
     --accent-hover: #7dd3fc;
@@ -78,7 +78,7 @@ body.dark {
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 25px rgba(34, 211, 238, 0.15);
+    --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.15);
 }
 
 /* ==========================================================================
@@ -1046,6 +1046,9 @@ body.dark .section-divider svg {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -1122,6 +1125,7 @@ body.dark .section-divider svg {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    margin-top: auto;
 }
 
 .service-link i {
@@ -2103,6 +2107,9 @@ body.dark .section-divider svg {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .blog-card:hover {
@@ -2145,6 +2152,9 @@ body.dark .section-divider svg {
 
 .blog-info {
     padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .blog-meta {
@@ -2185,6 +2195,7 @@ body.dark .section-divider svg {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    margin-top: auto;
 }
 
 .blog-link i {
