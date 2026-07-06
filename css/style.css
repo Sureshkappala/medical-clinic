@@ -420,7 +420,9 @@ ul {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary);
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
 .nav-links a::after {
