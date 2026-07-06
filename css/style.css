@@ -883,7 +883,16 @@ body.dark .section-divider svg {
     position: relative;
     z-index: 1;
     transition: transform var(--transition-normal);
-    height: 480px; /* Lock both containers to identical heights to match content */
+}
+
+/* Homepage about section image height - matches shorter content */
+#about .about-img {
+    height: 380px;
+}
+
+/* About page detailed section image height - matches taller accordion content */
+#about-details .about-img {
+    height: 480px;
 }
 
 .about-img img {
