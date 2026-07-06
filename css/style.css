@@ -881,7 +881,7 @@ body.dark .section-divider svg {
     position: relative;
     z-index: 1;
     transition: transform var(--transition-normal);
-    height: 320px; /* Lock both containers to identical heights */
+    height: 480px; /* Lock both containers to identical heights to match content */
 }
 
 .about-img img {
@@ -2785,6 +2785,9 @@ body.dark .map-embed iframe {
     .about-visual {
         max-width: 500px;
         margin: 0 auto;
+    }
+    .about-img {
+        height: 280px !important;
     }
     .about-img.img-1,
     .about-img.img-2 {
