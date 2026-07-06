@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stackly Clinic Portal Registration. Create a new patient account or register as a healthcare professional.">
-    <title>Stackly Clinic | Register Portal Account</title>
+    <meta name="description" content="Stackly Clinic Portal Registration. Create your patient health account.">
+    <title>Stackly Clinic | Register Account</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -26,131 +26,98 @@
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
 
-    <div class="auth-wrapper">
-        <!-- Left Sidebar: Visual Brand Panel -->
-        <div class="auth-sidebar">
-            <div class="auth-sidebar-glow"></div>
-            
-            <div class="auth-sidebar-brand">
-                <a href="index.html" class="logo">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 48px; width: auto;">
-                </a>
-            </div>
-            
-            <div class="auth-sidebar-content">
-                <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 1.5rem;">Join a Modern <span style="color: var(--primary);">Health Network</span></h1>
-                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 2.5rem;">Create your personal medical profile, schedule specialist appointments online, and track lab metrics effortlessly.</p>
-                
-                <div class="glass-card" style="padding: 24px; border-radius: var(--radius-md); display: flex; gap: 20px; align-items: center; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass);">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.3rem;">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <div>
-                        <span style="display: block; font-weight: 700; color: #fff; font-size: 1rem;">HIPAA Compliant Security</span>
-                        <span style="font-size: 0.85rem; color: var(--text-muted);">Zero-trust database encryption active.</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="auth-sidebar-footer">
-                <p>&copy; 2026 Stackly Clinic. All rights reserved.</p>
-            </div>
-        </div>
-        
-        <!-- Right Main Panel: Registration Form -->
-        <div class="auth-main">
-            <!-- Back Button -->
-            <div class="auth-nav-buttons" style="position: absolute; left: 2.5rem; top: 2.5rem;">
-                <a href="index.html" class="auth-nav-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Back to Home</a>
-            </div>
-            
-            <div class="auth-main-card reveal reveal-scale" style="margin-top: 4rem;">
-                <div style="margin-bottom: 2.5rem;">
-                    <!-- Logo for mobile only -->
-                    <a href="index.html">
-                        <img src="images/logo.webp" alt="Stackly Logo" class="brand-logo-img mobile-only-logo" style="height: 38px; width: auto; object-fit: contain; background-color: transparent; margin-bottom: 1.5rem; display: none;">
-                    </a>
-                    <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 2rem; font-weight: 800;">Create <span>Account</span></h2>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Register your patient portal or healthcare provider profile.</p>
-                </div>
-                
-                <form id="register-form" novalidate>
-                    <div class="form-group">
-                        <label for="register-name">Full Name</label>
-                        <div class="form-control-wrap">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <input type="text" id="register-name" placeholder="John Doe" style="padding-left: 2.2rem;" required>
-                        </div>
-                        <span class="error-msg">Please enter your name.</span>
-                    </div>
-
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="register-email">Email Address</label>
-                            <div class="form-control-wrap">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                <input type="email" id="register-email" placeholder="john@example.com" style="padding-left: 2.2rem;" required>
-                            </div>
-                            <span class="error-msg">Please enter a valid email.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="register-phone">Phone Number</label>
-                            <div class="form-control-wrap">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                <input type="tel" id="register-phone" placeholder="1234567890" style="padding-left: 2.2rem;" required>
-                            </div>
-                            <span class="error-msg">Please enter a valid phone.</span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="register-password">Password</label>
-                            <div class="form-control-wrap">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                <input type="password" id="register-password" placeholder="••••••••" style="padding-left: 2.2rem;" required>
-                            </div>
-                            <span class="error-msg">Please enter password.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="register-confirm">Confirm Password</label>
-                            <div class="form-control-wrap">
-                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                <input type="password" id="register-confirm" placeholder="••••••••" style="padding-left: 2.2rem;" required>
-                            </div>
-                            <span class="error-msg">Passwords must match.</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="register-role">Select Portal Role</label>
-                        <div class="form-control-wrap">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <select id="register-role" style="padding-left: 2.2rem;" required>
-                                <option value="" disabled selected>Select Role</option>
-                                <option value="patient">Patient Portal</option>
-                                <option value="admin">Administrator Portal</option>
-                            </select>
-                        </div>
-                        <span class="error-msg">Please select your portal role.</span>
-                    </div>
-                    
-                    <div class="auth-options" style="margin-top: 1rem;">
-                        <label class="checkbox-group">
-                            <input type="checkbox" id="register-terms" required>
-                            <span>I agree to the <a href="404.html">Terms & Conditions</a></span>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; height: 48px;">Register Account</button>
-                </form>
-                
-                <div class="auth-footer" style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
-                    Already have a health account? <a href="login.html" style="color: var(--primary); font-weight: 700;">Login Here</a>
-                </div>
-            </div>
-        </div>
+    <!-- Back Buttons at top left -->
+    <div class="auth-nav-buttons">
+        <a href="index.html" class="auth-nav-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="margin-right: 4px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Back to Home</a>
     </div>
+
+    <!-- ==========================================
+       REGISTER SEC CARD
+       ========================================== -->
+    <section class="auth-sec" style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 4rem 0;">
+        <div class="auth-card glass-card reveal reveal-scale" style="padding: 3rem; max-width: 540px; width: 90%; box-shadow: var(--shadow-lg);">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 38px; width: auto; object-fit: contain; background-color: transparent;  margin: 0 auto 1rem auto; display: block;">
+                <h2 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 2rem; font-weight: 800;">Create <span>Account</span></h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Register your patient portal or healthcare provider profile.</p>
+            </div>
+            
+            <form id="register-form" novalidate>
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <div class="form-control-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <input type="text" id="register-name" placeholder="John Doe" style="padding-left: 2.2rem;" required>
+                    </div>
+                    <span class="error-msg">Please enter your name.</span>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <div class="form-control-wrap">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <input type="email" id="register-email" placeholder="john@example.com" style="padding-left: 2.2rem;" required>
+                        </div>
+                        <span class="error-msg">Please enter a valid email.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Phone Number</label>
+                        <div class="form-control-wrap">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <input type="tel" id="register-phone" placeholder="1234567890" style="padding-left: 2.2rem;" required>
+                        </div>
+                        <span class="error-msg">Please enter a valid phone.</span>
+                    </div>
+                </div>
+                
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="form-control-wrap">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <input type="password" id="register-password" placeholder="••••••••" style="padding-left: 2.2rem;" required>
+                        </div>
+                        <span class="error-msg">Please enter password.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm">Confirm Password</label>
+                        <div class="form-control-wrap">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            <input type="password" id="register-confirm" placeholder="••••••••" style="padding-left: 2.2rem;" required>
+                        </div>
+                        <span class="error-msg">Passwords must match.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-role">Select Portal Role</label>
+                    <div class="form-control-wrap">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <select id="register-role" style="padding-left: 2.2rem;" required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="patient">Patient Portal</option>
+                            <option value="admin">Administrator Portal</option>
+                        </select>
+                    </div>
+                    <span class="error-msg">Please select your portal role.</span>
+                </div>
+                
+                <div class="auth-options" style="margin-top: 1rem;">
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="register-terms" required>
+                        <span>I agree to the <a href="404.html">Terms & Conditions</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; height: 48px;">Register Account</button>
+            </form>
+            
+            <div class="auth-footer" style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                Already have a health account? <a href="login.html" style="color: var(--primary); font-weight: 700;">Login Here</a>
+            </div>
+        </div>
+    </section>
 
     <!-- JavaScript Main logic -->
     <script src="js/main.js"></script>

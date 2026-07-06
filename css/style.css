@@ -415,6 +415,12 @@ ul {
     color: var(--text-main);
     padding: 0.5rem 0;
     position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
 }
 
 .nav-links a::after {
