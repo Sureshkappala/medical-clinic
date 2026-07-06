@@ -689,11 +689,11 @@ function initFormValidations() {
                 group.classList.add('invalid');
                 return;
             }
-            const emailInput = document.getElementById('login-email').value.trim().toLowerCase();
+            const emailValue = emailInput.value.trim().toLowerCase();
             const roleVal = document.getElementById('login-role').value;
             alertCustom(`Login successful! Welcome back to Stackly.`);
             setTimeout(() => {
-                if (roleVal === 'admin' || emailInput.includes('admin')) {
+                if (roleVal === 'admin' || emailValue.includes('admin')) {
                     window.location.href = 'admin-dashboard.html';
                 } else {
                     window.location.href = 'patient-dashboard.html';
