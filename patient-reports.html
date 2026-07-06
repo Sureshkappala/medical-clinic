@@ -35,8 +35,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -117,36 +168,84 @@
             <!-- INNER MAIN CONTENT -->
             <main class="dash-content-inner">
                 <div class="dash-two-col-grid">
-                    <!-- Left: Available reports table -->
-                    <div class="table-card glass-card">
-                        <div class="table-card-header">
-                            <h3>Available Lab Records</h3>
+                    <!-- Left Column: Reports group -->
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <!-- Left: Available reports table -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Available Lab Records</h3>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Report Title</th>
+                                            <th>Diagnosing Lab</th>
+                                            <th>Doctor Signed</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">Full Cardiac Panel Sync</td>
+                                            <td>Stackly Main Lab</td>
+                                            <td>Dr. Adrian Vance</td>
+                                            <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Complete Blood Count (CBC)</td>
+                                            <td>Stackly Main Lab</td>
+                                            <td>Dr. Julian Cross</td>
+                                            <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Lipid Profile Panel</td>
+                                            <td>Stackly Main Lab</td>
+                                            <td>Dr. Sarah Jenkins</td>
+                                            <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Thyroid Stimulating Hormone</td>
+                                            <td>Stackly Main Lab</td>
+                                            <td>Dr. Elena Rostova</td>
+                                            <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="dash-table-wrapper">
-                            <table class="dash-table">
-                                <thead>
-                                    <tr>
-                                        <th>Report Title</th>
-                                        <th>Diagnosing Lab</th>
-                                        <th>Doctor Signed</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="font-weight: 600;">Full Cardiac Panel Sync</td>
-                                        <td>Stackly Main Lab</td>
-                                        <td>Dr. Adrian Vance</td>
-                                        <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: 600;">Complete Blood Count (CBC)</td>
-                                        <td>Stackly Main Lab</td>
-                                        <td>Dr. Julian Cross</td>
-                                        <td><a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-download"></i> Download PDF</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <!-- Upcoming Diagnostic Orders -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Upcoming Diagnostic Orders</h3>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Test Order</th>
+                                            <th>Ordered By</th>
+                                            <th>Scheduled Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">HbA1c (Diabetes Screening)</td>
+                                            <td>Dr. Adrian Vance</td>
+                                            <td>20 July 2026</td>
+                                            <td><span class="badge badge-warning">Pending Blood Draw</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Electrocardiogram (ECG)</td>
+                                            <td>Dr. Julian Cross</td>
+                                            <td>24 July 2026</td>
+                                            <td><span class="badge badge-success">Pre-Authorized</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 

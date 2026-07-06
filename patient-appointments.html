@@ -35,8 +35,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -117,40 +168,93 @@
             <!-- INNER MAIN CONTENT -->
             <main class="dash-content-inner">
                 <div class="dash-two-col-grid">
-                    <!-- Left: Appointments roster list -->
-                    <div class="table-card glass-card">
-                        <div class="table-card-header">
-                            <h3>Scheduled Bookings</h3>
-                            <a href="services.html#booking" class="btn btn-primary btn-sm"><i class="fa-solid fa-calendar-plus"></i> New Slot</a>
+                    <!-- Left Column: Tables group -->
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <!-- Left: Appointments roster list -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Scheduled Bookings</h3>
+                                <a href="services.html#booking" class="btn btn-primary btn-sm"><i class="fa-solid fa-calendar-plus"></i> New Slot</a>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Doctor</th>
+                                            <th>Consultation Date</th>
+                                            <th>Session Time</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Adrian Vance</td>
+                                            <td>04 July 2026</td>
+                                            <td>10:30 AM</td>
+                                            <td><span class="badge badge-success">Approved</span></td>
+                                            <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Julian Cross</td>
+                                            <td>18 July 2026</td>
+                                            <td>11:15 AM</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Sarah Jenkins</td>
+                                            <td>24 July 2026</td>
+                                            <td>02:00 PM</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Elena Rostova</td>
+                                            <td>30 July 2026</td>
+                                            <td>09:30 AM</td>
+                                            <td><span class="badge badge-success">Approved</span></td>
+                                            <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="dash-table-wrapper">
-                            <table class="dash-table">
-                                <thead>
-                                    <tr>
-                                        <th>Doctor</th>
-                                        <th>Consultation Date</th>
-                                        <th>Session Time</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="font-weight: 600;">Dr. Adrian Vance</td>
-                                        <td>04 July 2026</td>
-                                        <td>10:30 AM</td>
-                                        <td><span class="badge badge-success">Approved</span></td>
-                                        <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: 600;">Dr. Julian Cross</td>
-                                        <td>18 July 2026</td>
-                                        <td>11:15 AM</td>
-                                        <td><span class="badge badge-warning">Pending</span></td>
-                                        <td><a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-ban"></i> Cancel</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <!-- History Log Card -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Consultation History</h3>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Doctor</th>
+                                            <th>Department</th>
+                                            <th>Date</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Adrian Vance</td>
+                                            <td>Cardiology</td>
+                                            <td>10 June 2026</td>
+                                            <td>Follow-up visit</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Julian Cross</td>
+                                            <td>Neurology</td>
+                                            <td>15 May 2026</td>
+                                            <td>Initial Consultation</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 

@@ -35,8 +35,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -162,6 +213,26 @@
                                         <td style="font-weight: 600;">Marcus Brodin</td>
                                         <td>Dr. Julian Cross</td>
                                         <td>06 July, 11:15 AM</td>
+                                        <td><span class="badge badge-warning">Pending</span></td>
+                                        <td>
+                                            <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-check"></i> Accept</a>
+                                            <a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-times"></i> Cancel</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Jane Doe</td>
+                                        <td>Dr. Adrian Vance</td>
+                                        <td>07 July, 09:30 AM</td>
+                                        <td><span class="badge badge-success">Approved</span></td>
+                                        <td>
+                                            <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-check"></i> Accept</a>
+                                            <a href="404.html" style="color: #ef4444; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-times"></i> Cancel</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Clara Oswald</td>
+                                        <td>Dr. Sarah Jenkins</td>
+                                        <td>08 July, 04:15 PM</td>
                                         <td><span class="badge badge-warning">Pending</span></td>
                                         <td>
                                             <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-check"></i> Accept</a>

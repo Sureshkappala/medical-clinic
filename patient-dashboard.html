@@ -36,8 +36,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -156,37 +207,79 @@
                 </div>
 
                 <div class="dash-two-col-grid">
-                    <!-- Left: Appointments brief list -->
-                    <div class="table-card glass-card">
-                        <div class="table-card-header">
-                            <h3>Upcoming Visits</h3>
-                            <a href="patient-appointments.html" style="color: var(--primary); font-size: 14px; font-weight: 600;">View All</a>
+                    <!-- Left Column: Tables group -->
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <!-- Left: Appointments brief list -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Upcoming Visits</h3>
+                                <a href="patient-appointments.html" style="color: var(--primary); font-size: 14px; font-weight: 600;">View All</a>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Doctor</th>
+                                            <th>Department</th>
+                                            <th>Date / Time</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Adrian Vance</td>
+                                            <td>Cardiology</td>
+                                            <td>Tomorrow, 10:30 AM</td>
+                                            <td><span class="badge badge-success">Approved</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Dr. Julian Cross</td>
+                                            <td>Neurology</td>
+                                            <td>18 July, 11:15 AM</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="dash-table-wrapper">
-                            <table class="dash-table">
-                                <thead>
-                                    <tr>
-                                        <th>Doctor</th>
-                                        <th>Department</th>
-                                        <th>Date / Time</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="font-weight: 600;">Dr. Adrian Vance</td>
-                                        <td>Cardiology</td>
-                                        <td>Tomorrow, 10:30 AM</td>
-                                        <td><span class="badge badge-success">Approved</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-weight: 600;">Dr. Julian Cross</td>
-                                        <td>Neurology</td>
-                                        <td>18 July, 11:15 AM</td>
-                                        <td><span class="badge badge-warning">Pending</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <!-- Immunization Log card -->
+                        <div class="table-card glass-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h3>Immunization &amp; Vaccination Log</h3>
+                            </div>
+                            <div class="dash-table-wrapper">
+                                <table class="dash-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Vaccine</th>
+                                            <th>Target Disease</th>
+                                            <th>Date Administered</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: 600;">COVID-19 Booster</td>
+                                            <td>SARS-CoV-2 (Pfizer)</td>
+                                            <td>14 Feb 2026</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Influenza (Seasonal)</td>
+                                            <td>Seasonal Flu (Quadrivalent)</td>
+                                            <td>18 Oct 2025</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 600;">Tdap Booster</td>
+                                            <td>Tetanus, Diphtheria, Pertussis</td>
+                                            <td>22 Aug 2024</td>
+                                            <td><span class="badge badge-success">Active</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 

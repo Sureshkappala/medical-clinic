@@ -20,6 +20,7 @@
     flex-direction: column;
     z-index: 100;
     transition: transform var(--transition-normal);
+    overflow: hidden;
 }
 
 .dash-sidebar-header {
@@ -38,6 +39,16 @@
     gap: 8px;
     flex: 1;
     margin: 0;
+    overflow-y: auto;
+}
+
+.dash-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dash-menu::-webkit-scrollbar-thumb {
+    background: var(--border-glass);
+    border-radius: 2px;
 }
 
 .dash-menu-category {
@@ -116,6 +127,10 @@
     font-weight: 800;
     margin: 0;
     color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .dash-topbar-right {
@@ -362,26 +377,58 @@
         transform: translateX(0);
     }
 
-    .dash-main {
-        margin-left: 0;
+    .dash-page-title h2 {
+        font-size: 18px !important;
+        max-width: 220px !important;
     }
 
-    .dash-menu-trigger {
-        display: flex;
+    .dash-main {
+        margin-left: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .dash-two-col-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
     }
 
     .dash-metrics-grid {
         grid-template-columns: repeat(2, 1fr);
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .dash-charts-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .table-card, .chart-card, .glass-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .dash-menu-trigger {
+        display: flex;
     }
 }
 
 @media (max-width: 576px) {
     .dash-topbar {
         padding: 0 20px;
+    }
+    
+    .dash-page-title h2 {
+        font-size: 16px !important;
+        max-width: 150px !important;
     }
     
     .dash-user-name {

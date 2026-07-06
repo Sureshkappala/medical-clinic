@@ -10,6 +10,86 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .dash-table th, .dash-table td {
+            white-space: nowrap !important;
+        }
+        .dash-table {
+            width: 100% !important;
+            min-width: max-content !important;
+        }
+        .dash-table-wrapper {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            margin-bottom: 10px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar {
+            height: 8px !important;
+            display: block !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-radius: 4px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-thumb {
+            background-color: var(--primary, #10b981) !important;
+            border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: var(--bg-primary);">
 
@@ -135,6 +215,20 @@
                                     <span style="font-size: 11px; background: rgba(56, 189, 248, 0.15); color: #7dd3fc; padding: 3px 8px; border-radius: 4px; font-weight: 600;">Mild Seasonal Asthma</span>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="glass-card" style="padding: 30px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Emergency Contacts</h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; font-size: 14px; margin: 0;">
+                                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+                                    <span style="color: var(--text-muted);">Sarah Henderson (Spouse):</span>
+                                    <span style="font-weight: 600; color: #fff;">+91 7010782746</span>
+                                </li>
+                                <li style="display: flex; justify-content: space-between; padding-bottom: 4px;">
+                                    <span style="color: var(--text-muted);">Dr. Adrian Vance (Physician):</span>
+                                    <span style="font-weight: 600; color: #fff;">+91 9988776655</span>
+                                </li>
+                            </ul>
                         </div>
 
                         <div class="glass-card" style="padding: 30px;">

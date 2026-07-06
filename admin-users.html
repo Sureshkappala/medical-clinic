@@ -35,8 +35,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -179,6 +230,36 @@
                                         <td>jane.doe@gmail.com</td>
                                         <td>+91 6778901234</td>
                                         <td><span class="badge badge-danger">Suspended</span></td>
+                                        <td>
+                                            <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-file-medical"></i> Records</a>
+                                            <a href="404.html" style="color: #fbbf24; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-pen"></i> Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Clara Oswald</td>
+                                        <td>clara.o@gmail.com</td>
+                                        <td>+91 7890123456</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-file-medical"></i> Records</a>
+                                            <a href="404.html" style="color: #fbbf24; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-pen"></i> Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Danny Pink</td>
+                                        <td>danny.p@yahoo.com</td>
+                                        <td>+91 8901234567</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>
+                                            <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-file-medical"></i> Records</a>
+                                            <a href="404.html" style="color: #fbbf24; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-pen"></i> Edit</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: 600;">Sarah Jane</td>
+                                        <td>sarah.j@outlook.com</td>
+                                        <td>+91 9012345678</td>
+                                        <td><span class="badge badge-success">Active</span></td>
                                         <td>
                                             <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;"><i class="fa-solid fa-file-medical"></i> Records</a>
                                             <a href="404.html" style="color: #fbbf24; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-pen"></i> Edit</a>

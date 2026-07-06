@@ -10,6 +10,86 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .dash-table th, .dash-table td {
+            white-space: nowrap !important;
+        }
+        .dash-table {
+            width: 100% !important;
+            min-width: max-content !important;
+        }
+        .dash-table-wrapper {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            margin-bottom: 10px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar {
+            height: 8px !important;
+            display: block !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-radius: 4px !important;
+        }
+        .dash-table-wrapper::-webkit-scrollbar-thumb {
+            background-color: var(--primary, #10b981) !important;
+            border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: var(--bg-primary);">
 

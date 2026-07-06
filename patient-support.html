@@ -35,8 +35,59 @@
             border-radius: 4px !important;
         }
         .dash-table-wrapper::-webkit-scrollbar-thumb {
-            background-color: #22d3ee !important;
+            background-color: var(--primary, #10b981) !important;
             border-radius: 4px !important;
+        }
+
+        /* Responsive Mobile Layout and Width Constraints */
+        @media (max-width: 991px) {
+            .dash-main {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow-x: hidden !important;
+            }
+            .dash-two-col-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .dash-charts-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .table-card, .chart-card, .glass-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1.2rem !important;
+            }
+            .dash-metrics-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .dash-content-inner {
+                padding: 20px !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .table-card, .chart-card, .glass-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .dash-content-inner {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
@@ -117,20 +168,38 @@
             <!-- INNER MAIN CONTENT -->
             <main class="dash-content-inner">
                 <div class="dash-two-col-grid">
-                    <!-- Left: Support Ticket form -->
-                    <div class="glass-card" style="padding: 30px;">
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; color: #fff;">File a Support Ticket</h3>
-                        <form id="support-form" onsubmit="event.preventDefault(); alertCustom('Your support ticket has been submitted successfully. A representative will contact you soon.'); this.reset();">
-                            <div class="form-group">
-                                <label>Subject Topic</label>
-                                <input type="text" placeholder="e.g., Portal login issues..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%;" required>
+                    <!-- Left Column: Support Form group -->
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <!-- Left: Support Ticket form -->
+                        <div class="glass-card" style="padding: 30px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; color: #fff;">File a Support Ticket</h3>
+                            <form id="support-form" onsubmit="event.preventDefault(); alertCustom('Your support ticket has been submitted successfully. A representative will contact you soon.'); this.reset();">
+                                <div class="form-group">
+                                    <label>Subject Topic</label>
+                                    <input type="text" placeholder="e.g., Portal login issues..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%;" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Detailed Description</label>
+                                    <textarea placeholder="Describe the issue in detail..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%; height: 120px; resize: none;" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Submit Support Ticket</button>
+                            </form>
+                        </div>
+
+                        <!-- FAQ Accordion Card -->
+                        <div class="glass-card" style="padding: 30px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #fff;">Frequently Asked Questions</h3>
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                                    <h4 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px;">How do I request prescription refills?</h4>
+                                    <p style="font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.4;">You can message your prescribing doctor directly through the Messages tab or request a refill during your follow-up clinic slots.</p>
+                                </div>
+                                <div style="padding-bottom: 4px;">
+                                    <h4 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px;">Can I link family medical records?</h4>
+                                    <p style="font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.4;">Yes, proxy link forms are available. Please fill out a release form with our support Desk representative.</p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Detailed Description</label>
-                                <textarea placeholder="Describe the issue in detail..." style="padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: white; width: 100%; height: 120px; resize: none;" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Submit Support Ticket</button>
-                        </form>
+                        </div>
                     </div>
 
                     <!-- Right: Tickets history log -->
