@@ -2754,6 +2754,18 @@ body.dark .map-embed iframe {
         font-size: 1.15rem;
         display: block;
         width: 100%;
+        padding: 0.6rem 12px;
+        border-left: 4px solid transparent;
+        transition: all var(--transition-fast);
+        box-sizing: border-box;
+    }
+    
+    .nav-links a.active {
+        color: var(--primary) !important;
+        font-weight: 700 !important;
+        border-left: 4px solid var(--primary);
+        background: rgba(16, 185, 129, 0.06);
+        border-radius: 6px;
     }
     
     /* Layouts adjustments */
