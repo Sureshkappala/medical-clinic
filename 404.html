@@ -8,12 +8,179 @@
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body style="background-color: var(--bg-primary); display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; position: relative; margin: 0; padding: 0;">
+    
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            text-align: center;
+            padding: 24px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
 
-    <!-- ==========================================
-       PRELOADER (HEARTBEAT PULSE)
-       ========================================== -->
+        /* Pulsing medical heart rate animation background */
+        .ecg-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 800px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .ecg-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 8s linear infinite;
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .error-card {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUpFade {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .error-code {
+            font-size: 7rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+            }
+            100% {
+                filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.5));
+            }
+        }
+
+        .error-icon-container {
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .stethoscope-icon {
+            font-size: 3rem;
+            color: #38bdf8;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .error-card h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 16px 0 8px 0;
+            color: #fff;
+        }
+
+        .error-card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0 0 32px 0;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .error-btn {
+            flex: 1;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, #0284c7 0%, #0891b2 100%);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 14px rgba(8, 145, 178, 0.3);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="error-container">
+
+    <!-- Preloader -->
     <div class="preloader">
         <svg class="pulse-svg" viewBox="0 0 150 100">
             <path class="pulse-glow" d="M0,50 L40,50 L50,20 L60,80 L70,45 L75,55 L80,50 L120,50" />
@@ -26,21 +193,28 @@
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
 
+    <!-- ECG Background Animation -->
+    <svg class="ecg-bg" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="ecg-line" d="M0 150H300L330 110L360 210L390 90L420 180L435 140L450 160L465 150H1000" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
 
-
-    <!-- 404 Main Card -->
-    <div class="auth-card glass-card reveal reveal-scale" style="text-align: center; max-width: 480px; width: 90%; padding: 3rem;">
-        <img src="images/404.webp" alt="404 Error" class="float-animation" style="width: 100%; max-width: 220px; margin: 0 auto 1.5rem auto; display: block;">
-        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Oops! Page Not Found</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;">The medical file coordinates or patient panel page you requested does not point to any active clinic database records or server arrays. The page may have been relocated.</p>
-
-        <div style="display: flex; gap: 1rem; width: 100%;">
-            <a href="javascript:history.back()" class="btn btn-secondary" style="flex: 1; text-align: center; justify-content: center; height: 48px; display: flex; align-items: center;">Go Back</a>
-            <a href="index.html" class="btn btn-primary" style="flex: 1; text-align: center; justify-content: center; height: 48px; display: flex; align-items: center;">Back To Home</a>
+    <!-- Error Card -->
+    <div class="error-card">
+        <div class="error-icon-container">
+            <i class="fa-solid fa-stethoscope stethoscope-icon"></i>
+        </div>
+        <div>
+            <span class="error-code">404</span>
+        </div>
+        <h2>Diagnostic Code: Missing Page</h2>
+        <p>The health record coordinates or clinical directory page you are looking for has been relocated or does not point to an active database file.</p>
+        
+        <div class="error-actions">
+            <a href="javascript:history.back()" class="error-btn btn-back"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+            <a href="index.html" class="error-btn btn-home"><i class="fa-solid fa-house"></i> Back to Home</a>
         </div>
     </div>
 
-    <!-- JavaScript Main logic -->
     <script src="js/main.js"></script>
 </body>
 </html>
